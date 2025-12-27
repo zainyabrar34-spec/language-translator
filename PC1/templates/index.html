@@ -16,6 +16,7 @@
             <div class="language-select">
                 <select name="source_lang">
                     <option value="en" selected>English</option>
+                    <option value="ur">Urdu</option>
                     <option value="hi">Hindi</option>
                     <option value="es">Spanish</option>
                     <option value="fr">French</option>
@@ -29,6 +30,7 @@
                 <select name="target_lang">
                     <option value="hi" selected>Hindi</option>
                     <option value="en">English</option>
+                    <option value="ur">Urdu</option>
                     <option value="es">Spanish</option>
                     <option value="fr">French</option>
                     <option value="de">German</option>
@@ -83,6 +85,7 @@ function speakText(text) {
     const voices = speechSynthesis.getVoices();
     let voice = voices.find(v => {
         if (targetLang === 'en') return v.lang.startsWith('en');
+        if (targetLang === 'ur') return v.lang.startsWith('ur');
         if (targetLang === 'hi') return v.lang.startsWith('hi');
         if (targetLang === 'es') return v.lang.startsWith('es');
         if (targetLang === 'fr') return v.lang.startsWith('fr');
@@ -101,3 +104,4 @@ function speakText(text) {
             </script>
 </body>
 </html>
+
